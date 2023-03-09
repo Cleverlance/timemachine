@@ -28,10 +28,12 @@
         this.timestamp = OriginalDate.parse(options.dateString) || options.timestamp || this.timestamp;
         this.difference = options.difference || this.difference;
         this.keepTime = options.keepTime || this.keepTime;
-        this.tick = options.tick || this.tick;
+        this.tick = options.tick === false ? false : options.tick || this.tick;
+        
         if (this.tick) {
           this.tickStartDate = new OriginalDate();
         }
+        
         this._apply();
       },
 
