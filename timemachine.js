@@ -47,6 +47,13 @@
         Date.prototype = OriginalDate.prototype;
       },
 
+      getConfig: function () {
+        return {
+          tick: this.tick,
+          keepTime: this.keepTime
+        };
+			},
+
       _apply: function() {
         var self = this;
 
@@ -89,6 +96,7 @@
         };
         Date.OriginalDate = OriginalDate;
         Date.UTC = OriginalDate.UTC;
+        Date.parse = Date.OriginalDate.parse;
       },
 
       _getDifference: function() {
